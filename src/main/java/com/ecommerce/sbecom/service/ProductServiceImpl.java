@@ -179,6 +179,7 @@ public class ProductServiceImpl implements ProductService{
         String fileName = fileService.uploadImage(path, image);
 
 //      updating the new file name to the product
+//      sjosjso.jpg
         productFromDb.setImage(fileName);
 
 //      save updated product
