@@ -70,6 +70,11 @@ public class User {
 // If a child entity is removed from the parent's collection or the relationship is set to null, the child entity is deleted from the database.
     private Set<Product> products;
 
+    @ToString.Exclude
+    @OneToOne(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Cart cart;
+
+
     @Getter
     @Setter
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
