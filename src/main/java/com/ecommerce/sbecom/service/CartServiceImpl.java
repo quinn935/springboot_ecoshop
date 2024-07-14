@@ -154,7 +154,7 @@ public class CartServiceImpl implements CartService{
             deleteProductFromCart(cartId, productId);
         }else{
             cartItem.setProductPrice(product.getSpecialPrice());
-            cartItem.setQuantity(cartItem.getQuantity() + quantity);
+            cartItem.setQuantity(newQuantity);
             cartItem.setDiscount(product.getDiscount());
             cart.setTotalPrice(cart.getTotalPrice() + cartItem.getProductPrice()*quantity);
             cartRepository.save(cart);
